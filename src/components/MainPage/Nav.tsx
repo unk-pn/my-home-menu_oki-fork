@@ -10,19 +10,16 @@ export const Nav = () => {
 
   useEffect(() => {
     const updateActiveButton = () => {
-      // Игнорируем обновления во время программного скролла по клику
       if (isClickScrolling.current) return;
 
-      // Немного опускаем зону срабатывания для более естественного ощущения
       const scrollPosition = window.scrollY + 200;
       let currentActive: FoodType = foodTypes[0];
 
-      // Идем по секциям и проверяем, в какой из них мы сейчас находимся
       foodTypes.forEach((type) => {
         const section = document.getElementById(type);
         if (section) {
-          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-          // Добавляем отступы, чтобы нижняя граница была чуть ниже реальной высоты
+          const sectionTop =
+            section.getBoundingClientRect().top + window.scrollY;
           const sectionBottom = sectionTop + section.offsetHeight;
 
           if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
@@ -31,16 +28,16 @@ export const Nav = () => {
         }
       });
 
-      // При самом верху страницы всегда активна первая категория
       if (window.scrollY < 100) {
         currentActive = foodTypes[0];
       }
 
-      setActiveSection((prev) => (prev !== currentActive ? currentActive : prev));
+      setActiveSection((prev) =>
+        prev !== currentActive ? currentActive : prev,
+      );
     };
 
     window.addEventListener("scroll", updateActiveButton, { passive: true });
-    // Запускаем через таймаут первый раз, чтобы DOM и стили (шрифты/картинки) точно прогрузились
     setTimeout(updateActiveButton, 300);
 
     return () => window.removeEventListener("scroll", updateActiveButton);
@@ -51,30 +48,30 @@ export const Nav = () => {
     type: FoodType,
   ) => {
     e.preventDefault();
-    
-    // Включаем флаг блокировки
+
     isClickScrolling.current = true;
     setActiveSection(type);
 
-    // Сбрасываем старый таймаут, если кликнули несколько раз подряд
     if (clickTimeout.current) {
       clearTimeout(clickTimeout.current);
     }
-    
-    // Снимаем блокировку через 800мс (когда анимация скролла гарантированно завершится)
+
     clickTimeout.current = setTimeout(() => {
       isClickScrolling.current = false;
     }, 800);
 
     const targetSection = document.getElementById(type);
     if (targetSection) {
-      const heroHeader = document.querySelector(".hero-header") as HTMLElement | null;
+      const heroHeader = document.querySelector(
+        ".hero-header",
+      ) as HTMLElement | null;
       const nav = document.querySelector(".nav") as HTMLElement | null;
 
       const offset =
         (heroHeader?.offsetHeight || 0) + (nav?.offsetHeight || 0) + 10;
-        
-      const absoluteTop = targetSection.getBoundingClientRect().top + window.scrollY;
+
+      const absoluteTop =
+        targetSection.getBoundingClientRect().top + window.scrollY;
       const targetPosition = absoluteTop - offset;
 
       window.scrollTo({

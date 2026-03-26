@@ -1,10 +1,9 @@
-import { FoodPage } from "@/components/MainPage/FoodPage";
-import с from "./page.module.css";
+import { MainPage } from "@/components/MainPage/MainPage";
 
 export default function Home() {
   return (
     <main>
-      <FoodPage />
+      <MainPage />
     </main>
   );
 }

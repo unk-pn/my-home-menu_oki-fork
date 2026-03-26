@@ -1,15 +1,14 @@
 import { Recipe, foodTypes } from "@/types";
 import { recipes as allRecipes } from "@/data/recipes.json";
 import { FoodSection } from "./FoodSection";
-import { Footer } from "./Footer";
-import { Header } from "./Header/Header";
+import { Nav } from "./Nav";
 
 const recipes = allRecipes as Recipe[];
 
-export const FoodPage = () => {
+export const MainPage = () => {
   return (
     <div>
-      <Header />
+      <Nav />
 
       <div>
         {foodTypes.map((type) => {
@@ -21,7 +20,9 @@ export const FoodPage = () => {
         })}
       </div>
 
-      <Footer />
+      <div className="bottom-cat">
+        <img src="images/Cats.png" alt="Cats" />
+      </div>
     </div>
   );
 };
