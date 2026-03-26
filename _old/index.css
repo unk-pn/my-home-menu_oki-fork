@@ -1,11 +1,8 @@
 @font-face {
-  font-family: "Educational Gothic";
-  src:
-    /* url("fonts/ofont.ru_Educational_Gothic.ttf") format("opentype"), */
-    url("/fonts/ofont.ru_Educational_Gothic.ttf") format("opentype"),
-    local("Educational Gothic");
+  font-family: 'Educational Gothic';
+  src: url('fonts/ofont.ru_Educational_Gothic.ttf') format('opentype'),
+       local('Educational Gothic');
   font-weight: normal;
-  font-style: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -21,9 +18,9 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  background-color: #fefbf4;
+  background-color: #FEFBF4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +44,7 @@ img {
   align-items: center;
   gap: 8px;
   width: 100%;
-  background-color: #fefbf4;
+  background-color: #FEFBF4;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -68,7 +65,7 @@ img {
   display: inline-flex;
   justify-content: flex-start;
   gap: 2px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #E6E6E6;
   position: sticky;
   z-index: 99;
   top: 82px;
@@ -86,7 +83,7 @@ img {
 }
 
 .button.active {
-  background-color: #f04800;
+  background-color: #F04800;
 }
 
 .button.active a {
@@ -103,7 +100,7 @@ img {
 /* Заголовки */
 h1 {
   margin: 0;
-  font-family: "Educational Gothic", sans-serif;
+  font-family: 'Educational Gothic', sans-serif;
   font-size: 24px;
   font-weight: 400;
   flex-shrink: 0;
@@ -129,7 +126,7 @@ h1 {
 
 .full-width-div {
   width: 100%;
-  background-color: #822e2e;
+  background-color: #822E2E;
   padding: 1px;
   box-sizing: border-box;
 }
@@ -202,8 +199,8 @@ h1 {
   justify-content: space-between;
   align-items: center;
   padding: 20px 16px;
-  background-color: #fefbf4;
-  border-top: 1px solid #e6e6e6;
+  background-color: #FEFBF4;
+  border-top: 1px solid #E6E6E6;
   font-size: 14px;
   font-weight: 400;
   color: #504140;
@@ -216,7 +213,7 @@ h1 {
 }
 
 .oki-link {
-  color: #f04800;
+  color: #F04800;
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s ease;
@@ -248,7 +245,7 @@ h1 {
   margin-bottom: 20px;
   background-color: #ffffff;
   border-radius: 24px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #E6E6E6;
   font-size: 16px;
   font-weight: 500;
   color: #504140;
@@ -258,7 +255,7 @@ h1 {
 }
 
 .back-button:hover {
-  color: #f04800;
+  color: #F04800;
 }
 
 /* Контейнер для картинки и тэгов */
@@ -312,10 +309,10 @@ h1 {
 /* Название блюда */
 .recipe-title {
   text-align: center;
-  font-family: "Educational Gothic", sans-serif;
+  font-family: 'Educational Gothic', sans-serif;
   font-size: 24px;
   font-weight: 400;
-  color: #822e2e;
+  color: #822E2E;
   margin: 30px 0;
 }
 
@@ -327,13 +324,13 @@ h1 {
 
 .ingredients-title {
   font-weight: 500;
-  color: #a79e9a;
+  color: #A79E9A;
   margin-bottom: 10px;
 }
 
 .ingredients-list {
-  background-color: #ffffff;
-  border: 1px solid #e6e6e6;
+  background-color: #FFFFFF;
+  border: 1px solid #E6E6E6;
   border-radius: 12px;
   padding: 20px 16px;
   list-style: none;
@@ -371,13 +368,13 @@ h1 {
 
 .steps-title {
   font-weight: 500;
-  color: #a79e9a;
+  color: #A79E9A;
   margin-bottom: 10px;
 }
 
 .steps-list {
-  background-color: #ffffff;
-  border: 1px solid #e6e6e6;
+  background-color: #FFFFFF;
+  border: 1px solid #E6E6E6;
   border-radius: 12px;
   padding: 20px 16px;
   list-style: none;
