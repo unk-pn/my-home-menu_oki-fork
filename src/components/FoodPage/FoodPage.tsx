@@ -3,7 +3,8 @@ import { FoodImage } from "./FoodImage";
 import { recipes as allRecipes } from "@/data/recipes.json";
 import { RecipeIngredients } from "./RecipeIngredients";
 import { RecipeSteps } from "./RecipeSteps";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const recipes = allRecipes as Recipe[];
 
@@ -13,11 +14,12 @@ interface FoodPageProps {
 
 export const FoodPage = ({ id }: FoodPageProps) => {
   const recipe = recipes.find((r) => r.id === id)!;
+  const router = useRouter()
 
   return (
     <div>
-      <Link href="/" className="back-button">
-        <img
+      <button className="back-button" onClick={() => router.back()}>
+        <Image
           src="images/icons/left.svg"
           alt="clock"
           className="tag-icon"
@@ -25,7 +27,7 @@ export const FoodPage = ({ id }: FoodPageProps) => {
           height="20"
         />
         <span style={{ fontWeight: 400 }}>Назад</span>
-      </Link>
+      </button>
 
       <FoodImage {...recipe} />
 
