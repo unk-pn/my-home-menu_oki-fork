@@ -21,7 +21,7 @@ export const FoodImage = ({ photo, time, price }: FoodImageProps) => {
             width="20"
             height="20"
           />
-          <span style={{ fontWeight: 600 }}>{time}</span>
+          <span style={{ fontWeight: 400 }}>{time}</span>
         </div>
         <div className="tag">
           <img
